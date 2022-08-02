@@ -16,6 +16,6 @@ To run the bot, run the following in the command line:
 python3 main.py
 ```
 
-#Output
+# Output
 
 ![](Screenshot_1.png)
