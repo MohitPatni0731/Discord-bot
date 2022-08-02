@@ -18,4 +18,4 @@ python3 main.py
 
 # Output
 
-![](Screenshot_1.png)
+<img src = "Screenshot_1.png">
