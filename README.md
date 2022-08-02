@@ -9,7 +9,7 @@ To run the bot, open the command line in the cloned repo directory and install t
 pip install -r requirements.txt
 ```
 
-# Execute
+## Execute
 To run the bot, run the following in the command line:
 
 ```
