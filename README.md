@@ -18,3 +18,4 @@ python3 main.py
 
 # Output
 
+![Screenshot_1](https://user-images.githubusercontent.com/34414245/182418572-fd9bf87f-5566-418f-adfb-4331e8ed12af.png)
