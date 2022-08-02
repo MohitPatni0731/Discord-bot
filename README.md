@@ -18,4 +18,4 @@ python3 main.py
 
 # Output
 
-<img src = "Screenshot_1.png">
+<img src="Screenshot_1.png">
