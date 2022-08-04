@@ -13,7 +13,7 @@ for i in range(100):
 
     # Now extracting the value of British Pound in Indian Rupees
     def Getting_current_price():
-        currency = "convert 1 pound to rs"
+        currency = "convert 1 GBP to INR"
         url = "https://google.com/search?q=" + currency
         request_result = requests.get(url)
 
