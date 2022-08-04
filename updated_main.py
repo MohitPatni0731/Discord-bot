@@ -9,7 +9,7 @@ import ssl
 import smtplib
 
 
-def Getting_current_price():
+def getting_current_price():
     """Extracting the value of British Pound in Indian Rupees"""
     currency = "convert 1 GBP to INR"
     url = f"https://google.com/search?q={currency}"
@@ -21,7 +21,7 @@ def Getting_current_price():
     current_price = float(temps[0])
     
     
-def Discord_bot():
+def discord_bot():
     """Using webhook we send the message in the Discord server"""
     hook = Webhook(
             "https://discord.com/api/webhooks/1003993992360366080/1cS8w3N2GHzW-2aAwLYZ9tpfcHHhRBiASgTIafnfJ1Q--NbC1Exat7lVVzr4mgvH3l5f"
@@ -82,8 +82,8 @@ def send_email():
 
 # Running a for loop to get the latest price of the GBP
 While True:
-    Getting_current_price()
-    Discord_bot()
+    getting_current_price()
+    discord_bot()
     send_email()
     
 time.sleep(1000)
