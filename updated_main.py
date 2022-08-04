@@ -9,7 +9,7 @@ import ssl
 import smtplib
 
 # Running a for loop to get the latest price of the GBP
-for i in range(100):
+While True:
 
     def Getting_current_price():
         """Extracting the value of British Pound in Indian Rupees"""
