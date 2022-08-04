@@ -15,7 +15,7 @@ for i in range(100):
     def Getting_current_price():
         currency = "convert 1 GBP to INR"
         url = f"https://google.com/search?q={currency}"
-        request_result = requests.get(url)
+        request_result = requests.get(f"https://google.com/search?q={currency}")
 
         soup = bs4.BeautifulSoup(request_result.text, "html.parser")
         temp = soup.find("div", class_="BNeawe iBp4i AP7Wnd").text
