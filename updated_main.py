@@ -30,7 +30,7 @@ def discord_bot():
     # Defining the upper and lower limit to get the alert when it will be triggered
     upper_limit = 96.50
     lower_limit = 96.40
-
+    
     if current_price >= upper_limit:
         high_price_alert = (
                 "ALERT HIGH PRICE: Current price of 1 British Pound is = "
