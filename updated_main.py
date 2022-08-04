@@ -70,7 +70,7 @@ for i in range(100):
         reciever = 'mohitpatni786@gmail.com'
 
         subject = 'AUTOMATED Pound rate email'
-        body = 'Current Pound rate in INR is = 99.99'
+        body = 'Current price of 1 British Pound is = '+str(current_price)+' Indian Rupees'
 
         em = EmailMessage()
         em['From'] = sender
