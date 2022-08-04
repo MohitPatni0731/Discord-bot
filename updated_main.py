@@ -11,8 +11,8 @@ import smtplib
 # Running a for loop to get the latest price of the GBP
 for i in range(100):
 
-    # Now extracting the value of British Pound in Indian Rupees
     def Getting_current_price():
+        """Extracting the value of British Pound in Indian Rupees"""
         currency = "convert 1 GBP to INR"
         url = f"https://google.com/search?q={currency}"
         request_result = requests.get(f"https://google.com/search?q={currency}")
@@ -24,9 +24,8 @@ for i in range(100):
     Getting_current_price()
     
     
-    #Semding Discord message
-    # Using webhook we send the message in the Discord server
     def Discord_bot():
+        """Using webhook we send the message in the Discord server"""
         hook = Webhook(
             "https://discord.com/api/webhooks/1003993992360366080/1cS8w3N2GHzW-2aAwLYZ9tpfcHHhRBiASgTIafnfJ1Q--NbC1Exat7lVVzr4mgvH3l5f"
         )
@@ -63,8 +62,8 @@ for i in range(100):
     Discord_bot()
             
             
-    #Sneding automated email
     def send_email():
+        """#Sneding automated email"""
         sender = 'mohitpatni0731@gmail.com'
         password = 'ckyryrdajffgmnde'
         reciever = 'mohitpatni786@gmail.com'
