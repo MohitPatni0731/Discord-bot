@@ -18,7 +18,7 @@ def getting_current_price():
     soup = bs4.BeautifulSoup(request_result.text, "html.parser")
     temp = soup.find("div", class_="BNeawe iBp4i AP7Wnd").text
     temps = temp.split(" ")
-    current_price = float(temps[0])
+    getting_current_price.current_price = float(temps[0])
     
     
 def discord_bot():
@@ -31,16 +31,16 @@ def discord_bot():
     upper_limit = 96.50
     lower_limit = 96.40
     
-    if current_price >= upper_limit:
-        hook.send("ALERT HIGH PRICE: Current price of 1 British Pound is = "+ str(current_price)+ " Indian Rupees")
+    if getting_current_price.current_price >= upper_limit:
+        hook.send("ALERT HIGH PRICE: Current price of 1 British Pound is = "+ str(getting_current_price.current_price)+ " Indian Rupees")
         upper_limit += 0.50
 
-    elif current_price <= lower_limit:
-        hook.send("ALERT LOW PRICE: Current price of 1 British Pound is = "+ str(current_price)+ " Indian Rupees")
+    elif getting_current_price.current_price <= lower_limit:
+        hook.send("ALERT LOW PRICE: Current price of 1 British Pound is = "+ str(getting_current_price.current_price)+ " Indian Rupees")
         lower_limit -= 0.50
 
     else:
-        hook.send("Current price of 1 British Pound is = "+ str(current_price)+ " Indian Rupees")
+        hook.send("Current price of 1 British Pound is = "+ str(getting_current_price.current_price)+ " Indian Rupees")
             
             
 def send_email():
@@ -50,7 +50,7 @@ def send_email():
     reciever = 'mohitpatni786@gmail.com'
 
     subject = 'AUTOMATED Pound rate email'
-    body = 'Current price of 1 British Pound is = '+str(current_price)+' Indian Rupees'
+    body = 'Current price of 1 British Pound is = '+str(getting_current_price.current_price)+' Indian Rupees'
 
     em = EmailMessage()
     em['From'] = sender
