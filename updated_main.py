@@ -16,9 +16,9 @@ def getting_current_price():
     request_result = requests.get(f"https://google.com/search?q={currency}")
 
     soup = bs4.BeautifulSoup(request_result.text, "html.parser")
-    temp = soup.find("div", class_="BNeawe iBp4i AP7Wnd").text
-    temps = temp.split(" ")
-    getting_current_price.current_price = float(temps[0])
+    texts = soup.find("div", class_="BNeawe iBp4i AP7Wnd").text
+    texts_split = temp.split(" ")
+    getting_current_price.current_price = float(texts_split[0])
     
     
 def discord_bot():
@@ -32,15 +32,15 @@ def discord_bot():
     lower_limit = 96.40
     
     if getting_current_price.current_price >= upper_limit:
-        hook.send("ALERT HIGH PRICE: Current price of 1 British Pound is = "+ str(getting_current_price.current_price)+ " Indian Rupees")
+        hook.send(f"ALERT HIGH PRICE: Current price of 1 British Pound is = {str(getting_current_price.current_price)} Indian Rupees")
         upper_limit += 0.50
 
     elif getting_current_price.current_price <= lower_limit:
-        hook.send("ALERT LOW PRICE: Current price of 1 British Pound is = "+ str(getting_current_price.current_price)+ " Indian Rupees")
+        hook.send(f"ALERT LOW PRICE: Current price of 1 British Pound is = {str(getting_current_price.current_price)} Indian Rupees")
         lower_limit -= 0.50
 
     else:
-        hook.send("Current price of 1 British Pound is = "+ str(getting_current_price.current_price)+ " Indian Rupees")
+        hook.send(f"Current price of 1 British Pound is = {str(getting_current_price.current_price)} Indian Rupees")
             
             
 def send_email():
@@ -50,7 +50,7 @@ def send_email():
     reciever = str(input('Enter email address you want to send mail to -- '))
 
     subject = 'AUTOMATED Pound rate email'
-    body = 'Current price of 1 British Pound is = '+str(getting_current_price.current_price)+' Indian Rupees'
+    body = f'Current price of 1 British Pound is = {str(getting_current_price.current_price)} Indian Rupees'
 
     em = EmailMessage()
     em['From'] = sender
