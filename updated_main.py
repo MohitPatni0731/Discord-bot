@@ -47,7 +47,7 @@ def send_email():
     """#Sneding automated email"""
     sender = 'mohitpatni0731@gmail.com'
     password = 'ckyryrdajffgmnde'
-    reciever = 'mohitpatni786@gmail.com'
+    reciever = str(input('Enter email address you want to send mail to -- '))
 
     subject = 'AUTOMATED Pound rate email'
     body = 'Current price of 1 British Pound is = '+str(getting_current_price.current_price)+' Indian Rupees'
