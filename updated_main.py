@@ -9,7 +9,7 @@ import ssl
 import smtplib
 
 
-def get_current_price():
+def getting_current_price():
     """Extracting the value of British Pound in Indian Rupees"""
     currency = "convert 1 GBP to INR"
     url = f"https://google.com/search?q={currency}"
@@ -32,30 +32,15 @@ def discord_bot():
     lower_limit = 96.40
     
     if current_price >= upper_limit:
-        high_price_alert = (
-                "ALERT HIGH PRICE: Current price of 1 British Pound is = "
-                + str(current_price)
-                + " Indian Rupees"
-            )
-        hook.send(high_price_alert)
+        hook.send("ALERT HIGH PRICE: Current price of 1 British Pound is = "+ str(current_price)+ " Indian Rupees")
         upper_limit += 0.50
 
     elif current_price <= lower_limit:
-        low_price_alert = (
-                "ALERT LOW PRICE: Current price of 1 British Pound is = "
-                + str(current_price)
-                + " Indian Rupees"
-            )
-        hook.send(low_price_alert)
+        hook.send("ALERT LOW PRICE: Current price of 1 British Pound is = "+ str(current_price)+ " Indian Rupees")
         lower_limit -= 0.50
 
     else:
-        current_price_alert = (
-                "Current price of 1 British Pound is = "
-                + str(current_price)
-                + " Indian Rupees"
-            )
-        hook.send(current_price_alert)
+        hook.send("Current price of 1 British Pound is = "+ str(current_price)+ " Indian Rupees")
             
             
 def send_email():
@@ -87,5 +72,3 @@ While True:
     send_email()
     
 time.sleep(1000)
-
-    
