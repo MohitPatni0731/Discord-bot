@@ -76,9 +76,9 @@ def send_email():
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:   
         smtp.login(sender, password)
         smtp.sendmail(sender, reciever, em.as_string())
-  
-getting_current_price()
-discord_bot()
-send_email()
-    
-time.sleep(1000)
+
+while 1:                 
+    getting_current_price()
+    discord_bot()
+    send_email()    
+    time.sleep(45*60)
