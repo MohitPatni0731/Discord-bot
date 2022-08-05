@@ -17,7 +17,7 @@ def getting_current_price():
 
     soup = bs4.BeautifulSoup(request_result.text, "html.parser")
     texts = soup.find("div", class_="BNeawe iBp4i AP7Wnd").text
-    texts_split = temp.split(" ")
+    texts_split = texts.split(" ")
     getting_current_price.current_price = float(texts_split[0])
     
     
