@@ -44,7 +44,7 @@ def discord_bot():
             
             
 def send_email():
-    """#Sneding automated email"""
+    """Sending automated email"""
     sender = 'mohitpatni0731@gmail.com'
     password = 'ckyryrdajffgmnde'
     reciever = str(input('Enter email address you want to send mail to -- '))
