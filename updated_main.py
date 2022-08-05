@@ -23,9 +23,7 @@ def getting_current_price():
     
 def discord_bot():
     """Using webhook we send the message in the Discord server"""
-    hook = Webhook(
-            "https://discord.com/api/webhooks/1003993992360366080/1cS8w3N2GHzW-2aAwLYZ9tpfcHHhRBiASgTIafnfJ1Q--NbC1Exat7lVVzr4mgvH3l5f"
-        )
+    hook = Webhook("Paste the webhook link url of the Discord channel -- ")
 
     # Defining the upper and lower limit to get the alert when it will be triggered
     upper_limit = 96.50
@@ -45,8 +43,8 @@ def discord_bot():
             
 def send_email():
     """Sending automated email"""
-    sender = 'mohitpatni0731@gmail.com'
-    password = 'ckyryrdajffgmnde'
+    sender = str(input('Enter your email -- '
+    password = input('Enter your password -- '
     reciever = str(input('Enter email address you want to send mail to -- '))
 
     subject = 'AUTOMATED Pound rate email'
