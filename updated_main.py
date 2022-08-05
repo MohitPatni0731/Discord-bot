@@ -9,7 +9,7 @@ import ssl
 import smtplib
 
 
-def getting_current_price():
+def get_current_price():
     """Extracting the value of British Pound in Indian Rupees"""
     currency = "convert 1 GBP to INR"
     url = f"https://google.com/search?q={currency}"
