@@ -66,7 +66,7 @@ def send_email():
   
 
 # Running a for loop to get the latest price of the GBP
-While True:
+while True:
     getting_current_price()
     discord_bot()
     send_email()
