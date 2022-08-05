@@ -1,3 +1,18 @@
+"""
+To use this script you need two things - One is your Google app password which is different from your account password and the webhook url of a Discord channel in which you want bot to send message.
+
+1. How to get app password of Google account
+- Go to https://myaccount.google.com/ and then click on Security tab then on app passwords.
+- Now in the Select app menu select the other option and then write python and then click on generate password.
+- Now the password is appearing on your screen. Now, use that password in the script.
+
+2. How to get webhooks url from Discord channel
+- Go to your desired channel in which you want to message and ensure that you are the admin of that server.
+- Now click on Edit channel, then click on Integrations
+- Now click on Webhooks and then on create webhooks url. Now, use that url in the script.
+"""
+
+
 import requests
 from dhooks import Webhook
 import bs4
