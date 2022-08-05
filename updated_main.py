@@ -43,8 +43,8 @@ def discord_bot():
             
 def send_email():
     """Sending automated email"""
-    sender = str(input('Enter your email -- '
-    password = input('Enter your password -- '
+    sender = str(input('Enter your email -- ')
+    password = input('Enter your password -- ')
     reciever = str(input('Enter email address you want to send mail to -- '))
 
     subject = 'AUTOMATED Pound rate email'
