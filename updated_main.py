@@ -64,11 +64,8 @@ def send_email():
         smtp.login(sender, password)
         smtp.sendmail(sender, reciever, em.as_string())
   
-
-# Running a for loop to get the latest price of the GBP
-while True:
-    getting_current_price()
-    discord_bot()
-    send_email()
+getting_current_price()
+discord_bot()
+send_email()
     
 time.sleep(1000)
