@@ -34,8 +34,8 @@ def get_current_price():
     texts = soup.find("div", class_="BNeawe iBp4i AP7Wnd").text
     texts_split = texts.split(" ")
     get_current_price.current_price = float(texts_split[0])
-    
-    
+
+
 def discord_bot():
     """Using webhook we send the message in the Discord server"""
     hook = Webhook("Paste the webhook link url of the Discord channel -- ")
@@ -43,42 +43,47 @@ def discord_bot():
     # Defining the upper and lower limit to get the alert when it will be triggered
     upper_limit = float(input("Enter the upper limit you want to set -- "))
     lower_limit = float(input("Enter the lowwer limit you wawnt to set -- "))
-    
+
     if get_current_price.current_price >= upper_limit:
-        hook.send(f"ALERT HIGH PRICE: Current price of 1 British Pound is = {str(get_current_price.current_price)} Indian Rupees")
+        hook.send(
+            f"ALERT HIGH PRICE: Current price of 1 British Pound is = {str(get_current_price.current_price)} Indian Rupees"
+        )
         upper_limit += 0.50
-
     elif get_current_price.current_price <= lower_limit:
-        hook.send(f"ALERT LOW PRICE: Current price of 1 British Pound is = {str(get_current_price.current_price)} Indian Rupees")
+        hook.send(
+            f"ALERT LOW PRICE: Current price of 1 British Pound is = {str(get_current_price.current_price)} Indian Rupees"
+        )
         lower_limit -= 0.50
-
     else:
-        hook.send(f"Current price of 1 British Pound is = {str(get_current_price.current_price)} Indian Rupees")
-            
-            
+        hook.send(
+            f"Current price of 1 British Pound is = {str(get_current_price.current_price)} Indian Rupees"
+        )
+
+
 def send_email():
     """Sending automated email"""
-    sender = str(input('Enter your email -- ')
-    password = input('Enter your password -- ')
-    reciever = str(input('Enter email address you want to send mail to -- '))
+    sender = input('Enter your email -- ')
+    password = input("Enter your password -- ")
+    reciever = input("Enter email address you want to send mail to -- ")
 
-    subject = 'AUTOMATED Pound rate email'
-    body = f'Current price of 1 British Pound is = {str(get_current_price.current_price)} Indian Rupees'
+    subject = "AUTOMATED Pound rate email"
+    body = f"Current price of 1 British Pound is = {str(get_current_price.current_price)} Indian Rupees"
 
     em = EmailMessage()
-    em['From'] = sender
-    em['To'] = reciever
-    em['Subject'] = subject
+    em["From"] = sender
+    em["To"] = reciever
+    em["Subject"] = subject
     em.set_content(body)
 
     context = ssl.create_default_context()
     port_number = 465
-    with smtplib.SMTP_SSL('smtp.gmail.com', port_number, context=context) as smtp:   
+    with smtplib.SMTP_SSL("smtp.gmail.com", port_number, context=context) as smtp:
         smtp.login(sender, password)
         smtp.sendmail(sender, reciever, em.as_string())
 
-while 1:                 
+
+while 1:
     getting_current_price()
     discord_bot()
-    send_email()    
-    time.sleep(45*60)
+    send_email()
+    time.sleep(45 * 60)
